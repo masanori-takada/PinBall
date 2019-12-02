@@ -1,17 +1,16 @@
 ﻿<Properties StartupConfiguration="{7856E00A-7DEC-A2D8-F123-E5B8539225EC}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/CloudController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/FripperController.cs">
     <Files>
-      <File FileName="Assets/BrightnessRegulator.cs" Line="7" Column="25" />
-      <File FileName="Assets/FripperController.cs" Line="8" Column="28" />
-      <File FileName="Assets/CloudController.cs" Line="8" Column="24" />
-      <File FileName="Assets/StarController.cs" Line="9" Column="46" />
+      <File FileName="Assets/FripperController.cs" Line="38" Column="1" />
+      <File FileName="Assets/CloudController.cs" />
+      <File FileName="Assets/StarController.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="PinBall" expanded="True">
             <Node name="Assets" expanded="True">
-              <Node name="CloudController.cs" selected="True" />
+              <Node name="FripperController.cs" selected="True" />
             </Node>
           </Node>
         </State>

@@ -12,6 +12,7 @@ public class StarController : MonoBehaviour
     {
         this.transform.Rotate(0, Random.Range(0, 360), 0);
         //回転角度の初期値を定義.
+        //Y方向のみ最初の回転角度位置がランダムのため、挙動が毎回異なる
     }
 
     void Update()

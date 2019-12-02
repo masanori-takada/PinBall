@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,7 +16,15 @@ public class BrightnessRegulator : MonoBehaviour
     //発光速度
 
     Color defaultColor = Color.white;
-    //このColor.whiteって必要あります？？
+    //このColor.white　を書く理由は、
+    //定義した変数には、必要なくても初期値を代入しておいた方が、上述の他の変数とも揃って、見やすい
+
+
+    void OnCollisionEnter(Collision other)
+    {
+        this.degree = 180;
+        //衝突した時の初期角度を180と設定。
+    }
 
 
     void Start()
@@ -32,16 +40,19 @@ public class BrightnessRegulator : MonoBehaviour
             this.defaultColor = Color.yellow;
         }
 
-        if (tag == "SmallCloudTag" || tag == "LargeCloudTag")
+        if (tag == "SmallCloudTag" || tag == "LargeCloudTag") 　 //||　は　またはの意味
+
         {
             this.defaultColor = Color.cyan;
         }
 
         this.myMaterial = GetComponent<Renderer>().material;
+        //Renderer　は、オブジェクトを描画するためのメイン処理＆データ管理
         //各オブジェクトにアタッチしているMaterialを取得
 
         myMaterial.SetColor("_EmissionColor", this.defaultColor * minEmission);
         //各オブジェクトの、EmissionColorの最初の色を、this.defaultColor * minEmission　に設定
+        //最初はdefaultColorの０．３掛けにより、暗めに設定しておく
     }
 
     void Update()
@@ -59,14 +70,11 @@ public class BrightnessRegulator : MonoBehaviour
             //各マテリアルのEmissionに、emissionColorを設定する。
 
             this.degree -= this.speed;
-            //角度を小さくしていく
+            //角度を小さくしていくことで、光が消えていく。
+            //衝突がないときは、初期値が０のときで、どんどんマイナスになるため、このifは発動せず何も起こらない
+            //衝突したときは、初期値が１８０となるため、ifが発動する
         }
     }
 
 
-    void OnCollisionEnter(Collision other)
-    {
-        this.degree = 180;
-        //衝突した時の初期角度を180と設定。
-    }
 }
